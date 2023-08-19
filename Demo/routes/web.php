@@ -36,3 +36,23 @@ Route::get("home2", function(){
 Route::get("home", function(){
     return "<a href='".route('edit-contact', [20])."'>About</>";
 });
+
+// Route grouping
+
+Route::group(['prefix' => 'customer'], function(){
+    Route::get("/", function () {
+        return "<h1>Customer get</h1>";
+    });
+    
+    Route::get("/create", function () {
+        return "<h1>Customer create</h1>";
+    });
+    
+    Route::get("/show", function () {
+        return "<h1>Customer show</h1>";
+    });
+});
+
+
+
+

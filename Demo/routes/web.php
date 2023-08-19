@@ -54,5 +54,8 @@ Route::group(['prefix' => 'customer'], function(){
 });
 
 
+// Fallback route
 
-
+Route::fallback(function(){
+    return "Route not exists";
+});

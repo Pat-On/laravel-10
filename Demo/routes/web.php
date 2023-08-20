@@ -20,9 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/home', [HomeController::class, 'index']);
-
 
 Route::get('about', [AboutController::class, 'index'])->name("about");
 
@@ -55,7 +53,6 @@ Route::group(['prefix' => 'customer'], function(){
         return "<h1>Customer show</h1>";
     });
 });
-
 
 // Fallback route
 

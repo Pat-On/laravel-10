@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,45 +21,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', function(){
-    $blogs = [
-        [
-            'title' => 'title',
-            'body' => 'body',
-            'status' => 1
-        ],
-        [
-            'title' => 'title',
-            'body' => 'body',
-            'status' => 1
-
-        ],
-        [
-            'title' => 'title',
-            'body' => 'body',
-            'status' => 0
-
-        ],
-        [
-            'title' => 'title',
-            'body' => 'body',
-            'status' => 1
-
-        ],
-    ];
-    return view("home", compact("blogs"));
-});
+Route::get('/home', [HomeController::class, 'index']);
 
 
-Route::get('about', function() {
-    $var = "My var";
-    // return view('about.index', ["var" => $var]);
-    return view('about.index', compact('var'));
-})->name("about");
+Route::get('about', [AboutController::class, 'index'])->name("about");
 
-Route::get("contact", function(){
-    return view('contact');
-});
+Route::get("contact", [ContactController::class, 'index']);
 
 Route::get("contact/{id}", function($id){
     return $id;

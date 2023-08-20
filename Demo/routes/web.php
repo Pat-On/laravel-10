@@ -18,7 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('about', function() {
-    return view('about.index');
+    $variable = "My var";
+    // return view('about.index', ["var" => $variable]);
+    return view('about.index', compact('var'));
 })->name("ABOUT");
 
 Route::get("contact", function(){

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +61,6 @@ Route::group(['prefix' => 'customer'], function(){
 Route::fallback(function(){
     return "Route not exists";
 });
+
+// Resource route
+Route::resource('blog', BlogController::class);

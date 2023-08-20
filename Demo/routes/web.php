@@ -17,11 +17,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/home', function(){
+    return view("home");
+});
+
+
 Route::get('about', function() {
-    $variable = "My var";
-    // return view('about.index', ["var" => $variable]);
+    $var = "My var";
+    // return view('about.index', ["var" => $var]);
     return view('about.index', compact('var'));
-})->name("ABOUT");
+})->name("about");
 
 Route::get("contact", function(){
     return view('contact');
@@ -35,9 +41,9 @@ Route::get("home2", function(){
     return "<a href='".route('about')."'>About</>";
 });
 
-Route::get("home", function(){
-    return "<a href='".route('edit-contact', [20])."'>About</>";
-});
+// Route::get("home", function(){
+//     return "<a href='".route('edit-contact', [20])."'>About</>";
+// });
 
 // Route grouping
 

@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\LoginController;
+
 
 
 /*
@@ -66,3 +68,8 @@ Route::fallback(function(){
 
 // Resource route
 Route::resource('blog', BlogController::class);
+
+
+// FORM
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');

@@ -19,7 +19,32 @@ Route::get('/', function () {
 
 
 Route::get('/home', function(){
-    return view("home");
+    $blogs = [
+        [
+            'title' => 'title',
+            'body' => 'body',
+            'status' => 1
+        ],
+        [
+            'title' => 'title',
+            'body' => 'body',
+            'status' => 1
+
+        ],
+        [
+            'title' => 'title',
+            'body' => 'body',
+            'status' => 0
+
+        ],
+        [
+            'title' => 'title',
+            'body' => 'body',
+            'status' => 1
+
+        ],
+    ];
+    return view("home", compact("blogs"));
 });
 
 

@@ -4,16 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
-// php artisan make:controller HomeController --invokable 
-
 class HomeController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke(Request $request)
-    {
+    public function index(){
         $blogs = [
             [
                 'title' => 'title',

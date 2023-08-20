@@ -22,5 +22,18 @@
     @endforeach
 
 
+    {{-- https://laravel.com/docs/10.x/blade --}}
+
+        @php
+          echo "Something";
+          // the same like  <?php
+          $data = true
+        @endphp
+
+        @isset($data)
+            "exists";
+        @endisset
+
+
   </div>
 @endsection

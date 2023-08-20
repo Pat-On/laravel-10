@@ -73,3 +73,8 @@ Route::resource('blog', BlogController::class);
 // FORM
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+Route::post('/login', [LoginController::class, 'handleLogin'])->name('login.submit');
+
+// CSRF TOKEN
+

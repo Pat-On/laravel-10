@@ -18,8 +18,8 @@ class LoginController extends Controller
         // dd($request->all());
 
         $request->validate([
-            'name' => 'required',
-            'email' => "required",
+            'name' => 'required|alpha|min:6|max:10',
+            'email' => ["required", 'email', ],
             'password' => 'required'
         ]);
 

@@ -19,14 +19,14 @@ return new class extends Migration
             $table->timestamps();
 
             // Data Types
-            $table->data("data");
-            $table->dataTime("data_time");
-            $table->time("time");
+            // $table->data("data");
+            // $table->dataTime("data_time");
+            // $table->time("time");
 
-            $table->decimal("amount")->default(0);
-            $table->double("double");
-            $table->float("float");
-            $table->integer("integer");
+            // $table->decimal("amount")->default(0);
+            // $table->double("double");
+            // $table->float("float");
+            // $table->integer("integer");
         });
     }
 

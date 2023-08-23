@@ -15,13 +15,16 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-
         // Query Builder
         // return DB::table('posts')->get();
         // return DB::table('posts')->find(1);
 
         // retrieve a list of column values
-        return DB::table('posts')->pluck('title', 'id');
+        // return DB::table('posts')->pluck('title', 'id');
+
+        // Where
+        // return DB::table('posts')->where('id', '>', '10')->where('id', '<', '15')->get();
+        // return DB::table('posts')->where('id', '=', '10')->get();
 
         $blogs = [
             [

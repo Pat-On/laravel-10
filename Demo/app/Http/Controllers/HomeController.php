@@ -20,6 +20,9 @@ class HomeController extends Controller
         // return DB::table('posts')->get();
         // return DB::table('posts')->find(1);
 
+        // retrieve a list of column values
+        return DB::table('posts')->pluck('title', 'id');
+
         $blogs = [
             [
                 'title' => 'title',

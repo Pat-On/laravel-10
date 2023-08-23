@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
-// php artisan make:controller HomeController --invokable 
+// php artisan make:controller HomeController --invocable 
 
 class HomeController extends Controller
 {

@@ -8,32 +8,27 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->text('image');
             $table->string('title');
             $table->text('description');
-            $table->boolean("status");
+            $table->integer('category_id');
             $table->timestamps();
-
-            // Data Types
-            // $table->data("data");
-            // $table->dataTime("data_time");
-            // $table->time("time");
-
-            // $table->decimal("amount")->default(0);
-            // $table->double("double");
-            // $table->float("float");
-            // $table->integer("integer");
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('posts');
     }

@@ -53,6 +53,10 @@ class HomeController extends Controller
         // DB::table('posts')->where('id', '10')->delete();
         // return DB::table('posts')->where('id', '10')->get();
 
+        // Joining
+        return DB::table('posts')->join('categories', 'posts.category_id', 'categories.id')->get();
+
+
         DB::table('posts')->delete(11);
         return DB::table('posts')->where('id', '11')->get();
 

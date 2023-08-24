@@ -54,7 +54,10 @@ class HomeController extends Controller
         // return DB::table('posts')->where('id', '10')->get();
 
         // Joining
-        return DB::table('posts')->join('categories', 'posts.category_id', 'categories.id')->get();
+        // return DB::table('posts')->join('categories', 'posts.category_id', 'categories.id')->get();
+
+        // Aggregation
+        // return DB::table('posts')->max('id');
 
 
         DB::table('posts')->delete(11);

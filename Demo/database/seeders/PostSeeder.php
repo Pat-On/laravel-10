@@ -18,9 +18,11 @@ class PostSeeder extends Seeder
             DB::table('posts')->insert([
                 'title' => Str::random(20),
                 'description' => Str::random(200),
-                'status' => 1,
-                'publish_date' => date('Y-m-d'),
-                'user_id' => 1
+                'image' => 'default',
+                'category_id' => 1
+                // 'status' => 1,
+                // 'publish_date' => date('Y-m-d'),
+                // 'user_id' => 1
             ]);
         }
 

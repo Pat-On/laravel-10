@@ -44,10 +44,14 @@ class HomeController extends Controller
         // );
 
         // Update
-        DB::table('posts')->where('id', '10')->update(['description' => "updated " . now()]);
+        // DB::table('posts')->where('id', '10')->update(['description' => "updated " . now()]);
 
+        // return DB::table('posts')->where('id', '10')->get();
+
+
+        // Delete
+        DB::table('posts')->where('id', '10')->delete();
         return DB::table('posts')->where('id', '10')->get();
-
 
         $blogs = [
             [

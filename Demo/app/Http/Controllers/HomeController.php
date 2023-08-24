@@ -27,21 +27,27 @@ class HomeController extends Controller
         // return DB::table('posts')->where('id', '=', '10')->get();
 
         // Insert
-        return DB::table('posts')->insert([
-            'title' => "Test data",
-            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatibus vero dignissimos perspiciatis quae voluptas aperiam provident veniam optio dolorum similique atque recusandae eligendi fugit porro eum incidunt, quo iusto.',
-            'status' => 1,
-            'publish_date' => date('Y-m-d'),
-            'user_id' => 1
-        ],
-        [
-            'title' => "Test data 222222222222222222222222",
-            'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatibus vero dignissimos perspiciatis quae voluptas aperiam provident veniam optio dolorum similique atque recusandae eligendi fugit porro eum incidunt, quo iusto.',
-            'status' => 1,
-            'publish_date' => date('Y-m-d'),
-            'user_id' => 1
-        ],
-    );
+        //     return DB::table('posts')->insert([
+        //         'title' => "Test data",
+        //         'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatibus vero dignissimos perspiciatis quae voluptas aperiam provident veniam optio dolorum similique atque recusandae eligendi fugit porro eum incidunt, quo iusto.',
+        //         'status' => 1,
+        //         'publish_date' => date('Y-m-d'),
+        //         'user_id' => 1
+        //     ],
+        //     [
+        //         'title' => "Test data 222222222222222222222222",
+        //         'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus voluptatibus vero dignissimos perspiciatis quae voluptas aperiam provident veniam optio dolorum similique atque recusandae eligendi fugit porro eum incidunt, quo iusto.',
+        //         'status' => 1,
+        //         'publish_date' => date('Y-m-d'),
+        //         'user_id' => 1
+        //     ],
+        // );
+
+        // Update
+        DB::table('posts')->where('id', '10')->update(['description' => "updated"]);
+
+        return DB::table('posts')->where('id', '10')->get();
+
 
         $blogs = [
             [

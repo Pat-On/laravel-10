@@ -50,8 +50,11 @@ class HomeController extends Controller
 
 
         // Delete
-        DB::table('posts')->where('id', '10')->delete();
-        return DB::table('posts')->where('id', '10')->get();
+        // DB::table('posts')->where('id', '10')->delete();
+        // return DB::table('posts')->where('id', '10')->get();
+
+        DB::table('posts')->delete(11);
+        return DB::table('posts')->where('id', '11')->get();
 
         $blogs = [
             [

@@ -44,7 +44,7 @@ class HomeController extends Controller
         // );
 
         // Update
-        DB::table('posts')->where('id', '10')->update(['description' => "updated"]);
+        DB::table('posts')->where('id', '10')->update(['description' => "updated " . now()]);
 
         return DB::table('posts')->where('id', '10')->get();
 

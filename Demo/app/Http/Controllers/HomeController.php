@@ -90,6 +90,31 @@ class HomeController extends Controller
         // ];
         // return view("home", compact("blogs"));
     
-        return $posts = Post::all();
+
+
+
+        /**
+         * 
+         * 1. retrieving all data
+         * 2. retrieving single data
+         * 3. Retrieving single data or throw error
+         * 
+         */
+
+        //  1 return collection
+        // return $posts = Post::all(); // DB::table('posts')->get();
+
+        // 2
+        // return Post::find(37);
+
+        // 3
+        // return Post::findOrFail(37);
+
+        $posts = Post::all();
+
+        foreach($posts as $post) {
+            echo $post->title;
+        }
+
     }
 }

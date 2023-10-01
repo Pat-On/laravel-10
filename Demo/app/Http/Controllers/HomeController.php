@@ -110,11 +110,19 @@ class HomeController extends Controller
         // 3
         // return Post::findOrFail(37);
 
-        $posts = Post::all();
+        // $posts = Post::all();
 
-        foreach($posts as $post) {
-            echo $post->title;
-        }
+        // foreach($posts as $post) {
+        //     echo $post->title;
+        // }
+
+            // You can chain it of course - many where methods
+        // return Post::where('id', '>', 10)->get();
+
+        // it works like if() else if()
+        return Post::where('id', '>', 10)->orWhere('id','=', 61)->get();
+
+
 
     }
 }

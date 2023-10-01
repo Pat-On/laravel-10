@@ -120,9 +120,21 @@ class HomeController extends Controller
         // return Post::where('id', '>', 10)->get();
 
         // it works like if() else if()
-        return Post::where('id', '>', 10)->orWhere('id','=', 61)->get();
+        // return Post::where('id', '>', 10)->orWhere('id','=', 61)->get();
 
 
+        // vid 51
+        $post = new Post();
+        $titleString = 'Post 444444';
+        $post->title = $titleString;
+        $post->description = "this is the description";
+        $post->category_id = 1;
+        $post->image = "image";
 
+        $post->save();
+
+        // dd("success");
+        return Post::where('title', '=', $titleString)->get();
+    
     }
 }

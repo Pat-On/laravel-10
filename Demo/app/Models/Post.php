@@ -15,4 +15,19 @@ class Post extends Model
 
     // You can redefine to what table model belongs example
     // protected $table = 'posts';
+
+    // fillable - for mass assignments
+    protected $fillable = [
+        'title',
+        // 'status',
+        'description',
+        // 'published',
+        'category_id',
+        'image'
+    ];
+
+    // guarded  - if empty - you can do mass assignment on everything
+    // protected $guarded = [
+        // 'title'
+    // ];
 }

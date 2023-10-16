@@ -155,12 +155,40 @@ class HomeController extends Controller
 
         // Post::findOrFail(60)->delete();
 
-        Post::where('id', 60)->delete();
+        // Post::where('id', 60)->delete();
 
         // dd('success');
 
-        $post = Post::find(60);
-        return $post ?? 'empty';
+        // $post = Post::find(60);
+        // return $post ?? 'empty';
 
+
+        // Mass  Assignment
+        
+            //  create
+        // $post = Post::create([
+        //     'title' => "this is new post",
+        //     'description' => "a crazy good post",
+        //     "status" => 1,
+        //     'image' => 'default',
+        //     'category_id'=> 1
+        // ]);
+
+
+        // update
+    //    $post = Post::find(68)->update([
+    //     'title' => "a crazy update !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1"
+    //    ]);
+
+    //    $post = Post::find(68);
+
+       // mass update
+       $post = Post::where('category_id', 1)->update([
+        'category_id' => 0
+        ]);
+
+        $post = Post::get();
+
+        return $post;
     }
 }

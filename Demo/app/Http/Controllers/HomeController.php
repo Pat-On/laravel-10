@@ -208,9 +208,10 @@ class HomeController extends Controller
 
 
         // Restoring and permanent deletion
-        $post = Post::withTrashed()->find(2)->restore();
-        $post = Post::onlyTrashed()->get();
+        // $post = Post::withTrashed()->find(2)->restore();
+        // $post = Post::onlyTrashed()->get();
 
+        $post = Post::get();
 
         // Post::withTrashed()->find(1)->forceDelete(); // danger of calling method on null
 

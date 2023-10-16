@@ -196,14 +196,24 @@ class HomeController extends Controller
 
         // Soft Deleting - trashing
         // $post = Post::get();
-
         // $post = Post::where('id', 2)->delete();
         // $post = Post::where('id', 1)->withTrashed()->get();
 
-        
 
+
+        // $post = Post::onlyTrashed()->get();
+
+        // return $post;
+
+
+
+        // Restoring and permanent deletion
+        $post = Post::withTrashed()->find(2)->restore();
         $post = Post::onlyTrashed()->get();
-        
+
+
+        // Post::withTrashed()->find(1)->forceDelete(); // danger of calling method on null
+
         return $post;
     }
 }

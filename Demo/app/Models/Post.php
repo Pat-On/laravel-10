@@ -28,6 +28,6 @@ class Post extends Model
 
     // guarded  - if empty - you can do mass assignment on everything
     // protected $guarded = [
-        // 'title'
+    // 'title'
     // ];
 }

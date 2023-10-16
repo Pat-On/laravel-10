@@ -73,23 +73,23 @@ class HomeController extends Controller
         //         'title' => 'title',
         //         'body' => 'body',
         //         'status' => 1
-    
+
         //     ],
         //     [
         //         'title' => 'title',
         //         'body' => 'body',
         //         'status' => 0
-    
+
         //     ],
         //     [
         //         'title' => 'title',
         //         'body' => 'body',
         //         'status' => 1
-    
+
         //     ],
         // ];
         // return view("home", compact("blogs"));
-    
+
 
 
 
@@ -116,7 +116,7 @@ class HomeController extends Controller
         //     echo $post->title;
         // }
 
-            // You can chain it of course - many where methods
+        // You can chain it of course - many where methods
         // return Post::where('id', '>', 10)->get();
 
         // it works like if() else if()
@@ -135,7 +135,7 @@ class HomeController extends Controller
 
         // // dd("success");
         // return Post::where('title', '=', $titleString)->get();
-    
+
 
         // updating data with eloquent
 
@@ -148,8 +148,8 @@ class HomeController extends Controller
         // $post-> title = "This is a new title";
         // $post->save();
         // return $post;
-    
-    
+
+
         // Deleting data
         // Post::find(60)->delete(); // if data is not present error, because delete is called on null
 
@@ -164,8 +164,8 @@ class HomeController extends Controller
 
 
         // Mass  Assignment
-        
-            //  create
+
+        //  create
         // $post = Post::create([
         //     'title' => "this is new post",
         //     'description' => "a crazy good post",
@@ -176,15 +176,15 @@ class HomeController extends Controller
 
 
         // update
-    //    $post = Post::find(68)->update([
-    //     'title' => "a crazy update !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1"
-    //    ]);
+        //    $post = Post::find(68)->update([
+        //     'title' => "a crazy update !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1"
+        //    ]);
 
-    //    $post = Post::find(68);
+        //    $post = Post::find(68);
 
-       // mass update
-       $post = Post::where('category_id', 1)->update([
-        'category_id' => 0
+        // mass update
+        $post = Post::where('category_id', 1)->update([
+            'category_id' => 0
         ]);
 
         $post = Post::get();

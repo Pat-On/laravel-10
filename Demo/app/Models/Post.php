@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 // php artisan make:model Post
@@ -12,6 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    
+    // implementing soft delete
+    use SoftDeletes;
 
     // You can redefine to what table model belongs example
     // protected $table = 'posts';

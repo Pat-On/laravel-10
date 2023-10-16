@@ -183,11 +183,22 @@ class HomeController extends Controller
         //    $post = Post::find(68);
 
         // mass update
-        $post = Post::where('category_id', 1)->update([
-            'category_id' => 0
-        ]);
+        // $post = Post::where('category_id', 1)->update([
+        //     'category_id' => 0
+        // ]);
 
-        $post = Post::get();
+        // $post = Post::get();
+
+        // return $post;
+
+
+
+
+        // Soft Deleting - trashing
+        // $post = Post::get();
+
+        $post = Post::where('id', 2)->delete();
+        $post = Post::where('id', 1)->withTrashed()->get();
 
         return $post;
     }

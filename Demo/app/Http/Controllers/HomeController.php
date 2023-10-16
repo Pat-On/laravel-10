@@ -144,9 +144,23 @@ class HomeController extends Controller
         // $post = Post::get();
 
 
+        // $post = Post::find(60);
+        // $post-> title = "This is a new title";
+        // $post->save();
+        // return $post;
+    
+    
+        // Deleting data
+        // Post::find(60)->delete(); // if data is not present error, because delete is called on null
+
+        // Post::findOrFail(60)->delete();
+
+        Post::where('id', 60)->delete();
+
+        // dd('success');
+
         $post = Post::find(60);
-        $post-> title = "This is a new title";
-        $post->save();
-        return $post;
+        return $post ?? 'empty';
+
     }
 }

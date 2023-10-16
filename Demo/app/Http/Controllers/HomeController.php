@@ -124,17 +124,29 @@ class HomeController extends Controller
 
 
         // vid 51
-        $post = new Post();
-        $titleString = 'Post 444444';
-        $post->title = $titleString;
-        $post->description = "this is the description";
-        $post->category_id = 1;
-        $post->image = "image";
+        // $post = new Post();
+        // $titleString = 'Post 444444';
+        // $post->title = $titleString;
+        // $post->description = "this is the description";
+        // $post->category_id = 1;
+        // $post->image = "image";
 
-        $post->save();
+        // $post->save();
 
-        // dd("success");
-        return Post::where('title', '=', $titleString)->get();
+        // // dd("success");
+        // return Post::where('title', '=', $titleString)->get();
     
+
+        // updating data with eloquent
+
+        // Collection
+        // $post = Post::where('image', '=', 'default')->get();
+        // $post = Post::get();
+
+
+        $post = Post::find(60);
+        $post-> title = "This is a new title";
+        $post->save();
+        return $post;
     }
 }

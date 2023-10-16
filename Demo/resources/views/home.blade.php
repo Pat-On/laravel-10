@@ -3,37 +3,18 @@
 @section('content')
   <main role="main" class="container">
     <h1 class="mt-5 text-danger">Home</h1>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum pariatur ratione quaerat vero a, ullam reiciendis earum distinctio nihil exercitationem quidem neque odit aliquid quasi esse, repudiandae, adipisci non placeat.
+    <div class="row mt-5">
+      @foreach ($users as $user)
+        <div class="col-md-3">
+          <div class="card-body">
+            <h4>{{$user->name}}</h4>
+            <p>{{$user->email}}</p>
+            <p>{{$user->address?->address}}</p>
+          </div>
+        </div>
+      @endforeach
+    </div>
   </main>
-  <div class='row mt-5'>
-    @foreach ($blogs as $blog)
-      @if ($blog['status'] == 1)
-        <div>
-          <h2>{{$blog['title']}}</h2>
-          <p>{{$blog['body']}}</p>
-        </div>
 
-      @else
-        <div>
-          <h2>hidden</h2>
-        </div>
-
-      @endif
-    @endforeach
-
-
-    {{-- https://laravel.com/docs/10.x/blade --}}
-
-        @php
-          echo "Something";
-          // the same like  <?php
-          $data = true
-        @endphp
-
-        @isset($data)
-            "exists";
-        @endisset
-
-
-  </div>
 @endsection
+

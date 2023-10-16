@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Address;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
@@ -211,10 +214,20 @@ class HomeController extends Controller
         // $post = Post::withTrashed()->find(2)->restore();
         // $post = Post::onlyTrashed()->get();
 
-        $post = Post::get();
+        // $post = Post::get();
 
         // Post::withTrashed()->find(1)->forceDelete(); // danger of calling method on null
 
-        return $post;
+        // return $post;
+
+
+
+
+        // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        $users = User::all();
+
+        return view('home', compact('users'));
+        // return $users;
     }
 }

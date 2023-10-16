@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Address;
+
 use Illuminate\Database\Seeder;
 use Database\Seeders\PostSeeder;
 
@@ -27,5 +30,8 @@ class DatabaseSeeder extends Seeder
 
         // call to factory
         Post::factory(200)->create();
+        User::factory(10)->create();
+        Address::factory(10)->create();
+
     }
 }

@@ -14,7 +14,7 @@
             <p>{{$user->address?->address}}</p>
           </div>
         </div> --}}
-
+{{-- 
         @foreach ($addresses as $address)
 
         <div class="col-md-3">
@@ -22,6 +22,18 @@
             <h4>{{$address?->user->name}}</h4>
             <p>{{$address?->user->email}}</p>
             <p>{{$address?->address}}</p>
+          </div>
+        </div> --}}
+
+
+
+        @foreach ($categories as $category)
+
+        <div class="col-md-3">
+          <div class="card-body">
+            <h4>{{$category?->title}}</h4>
+            <p>{{$category?->description}}</p>
+            <p>{{$category->category->name}}</p>
           </div>
         </div>
 

@@ -34,4 +34,9 @@ class Post extends Model
     // protected $guarded = [
     // 'title'
     // ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

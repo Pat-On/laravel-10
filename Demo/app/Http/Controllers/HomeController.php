@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Address;
+use App\Models\Category;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -234,8 +236,14 @@ class HomeController extends Controller
         // inverse relation
 
 
-        $addresses = Address::all();
+        // $addresses = Address::all();
 
-        return view('home', compact('addresses'));
+        // return view('home', compact('addresses'));
+
+        // one to many
+        
+        $categories = Category::find(1)->posts;
+
+        return view('home', compact('categories'));
     }
 }

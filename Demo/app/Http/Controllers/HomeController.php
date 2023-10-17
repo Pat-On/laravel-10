@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Address;
 use App\Models\Category;
+use App\Models\Tag;
+
 
 
 use Illuminate\Http\Request;
@@ -242,8 +244,24 @@ class HomeController extends Controller
 
         // one to many
         
-        $categories = Category::find(1)->posts;
+        // $categories = Category::find(1)->posts;
 
-        return view('home', compact('categories'));
+        // return view('home', compact('categories'));
+
+
+
+        $post = Post::with('tags')->first();
+
+
+        $tag = Tag::first();
+
+        // $post->tags()->attach($tag);
+
+        // you can attach as well the array 
+
+        // $post->tags()->attach([2, 3, 4]);
+
+
+        return $post;
     }
 }

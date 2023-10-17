@@ -225,9 +225,17 @@ class HomeController extends Controller
 
         // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        $users = User::all();
+        // $users = User::all();
 
-        return view('home', compact('users'));
+        // return view('home', compact('users'));
         // return $users;
+
+
+        // inverse relation
+
+
+        $addresses = Address::all();
+
+        return view('home', compact('addresses'));
     }
 }

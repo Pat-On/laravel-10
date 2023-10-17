@@ -30,4 +30,10 @@ class Address extends Model
     // protected $guarded = [
     // 'title'
     // ];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

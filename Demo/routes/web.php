@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
@@ -27,6 +28,8 @@ Route::get('/', function () {
 // Route::get('/home', [HomeController::class, 'index']);
 Route::get('/home', HomeController::class);
 
+// file uploading
+Route::post('/upload', [ImageController::class, 'handleImage'])->name('upload-file');
 
 Route::get('about', [AboutController::class, 'index'])->name("about");
 

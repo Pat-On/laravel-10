@@ -53,7 +53,13 @@ class HomeController extends Controller
         // return storage_path("/");
 
 
-        return view('home');
+        // return view('home');
+
+        $posts = Post::all();
+
+        return response()->json($posts);
+        // return response($posts);
+
 
     }
 }

@@ -31,6 +31,10 @@ Route::get('/home', HomeController::class);
 // file uploading
 Route::post('/upload', [ImageController::class, 'handleImage'])->name('upload-file');
 
+Route::get('/success', function(){
+    return '<h1>Successfully uploaded</h1>';
+})->name('success');
+
 Route::get('about', [AboutController::class, 'index'])->name("about");
 
 Route::get("contact", [ContactController::class, 'index']);

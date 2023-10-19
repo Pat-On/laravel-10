@@ -11,9 +11,9 @@ class ImageController extends Controller
     {
 
 
-        $request->validate([
-            'image' => ['required', 'max:500'] //500KB
-        ]);
+        // $request->validate([
+        //     'image' => ['required', 'max:500'] //500KB
+        // ]);
 
 
 
@@ -22,5 +22,7 @@ class ImageController extends Controller
         // dd($request->file('image'));
         // `/` as a default storage/app/public
         $request->image->storeAs('/images', 'new_image.jpg');
+
+        return redirect()->route('success'); //->back(); or redirect('/success');
     }
 }

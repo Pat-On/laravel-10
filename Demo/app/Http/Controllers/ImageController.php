@@ -25,4 +25,11 @@ class ImageController extends Controller
 
         return redirect()->route('success'); //->back(); or redirect('/success');
     }
+
+
+
+    public function download()
+    {
+        return response()->download(public_path('/images/new_image.jpg'));
+    }
 }

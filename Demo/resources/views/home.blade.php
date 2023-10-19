@@ -27,6 +27,9 @@
         </div>
       </form>
     </div>
+
+
+    <a class='btn btn-primary' href="{{route('download')}}">Download Image</a>
   </main>
 
 @endsection

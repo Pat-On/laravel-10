@@ -35,6 +35,8 @@ Route::get('/success', function(){
     return '<h1>Successfully uploaded</h1>';
 })->name('success');
 
+Route::get('/download',[ImageController::class, 'download'])->name('download');
+
 Route::get('about', [AboutController::class, 'index'])->name("about");
 
 Route::get("contact", [ContactController::class, 'index']);

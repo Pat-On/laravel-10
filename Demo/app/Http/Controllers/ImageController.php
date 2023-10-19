@@ -9,6 +9,14 @@ class ImageController extends Controller
     //
     public function handleImage(Request $request)
     {
+
+
+        $request->validate([
+            'image' => ['required', 'max:500'] //500KB
+        ]);
+
+
+
         // return $request->all(); // return entire request back
 
         // dd($request->file('image'));

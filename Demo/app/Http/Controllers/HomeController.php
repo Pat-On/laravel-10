@@ -37,7 +37,6 @@ class HomeController extends Controller
         // $post->tags()->attach([2, 3, 4]);
 
 
-        // return view('home');
 
 
         // Deleting files from the storage
@@ -49,8 +48,12 @@ class HomeController extends Controller
         // File::delete(storage_path("/app/images/new_image.jpg"));
 
 
-        unlink(storage_path("/app/images/new_image.jpg"));
+        // unlink(storage_path("/app/images/new_image.jpg"));
 
-        return storage_path("/");
+        // return storage_path("/");
+
+
+        return view('home');
+
     }
 }

@@ -2,6 +2,13 @@
 
 @section('content')
   <main role="main" class="container">
+
+    @if($errors->any())
+      @foreach($errors->all() as $error)
+        <div class="alert alert-danger">{{$error}}</div>
+      @endforeach
+    @endif 
+
     {{-- php artisan storage:link --}}
     <img src="{{asset('/images/new_image.jpg')}}" style="width:600px;" alt="">
 

@@ -3,7 +3,7 @@
 @section('content')
   <main role="main" class="container">
     {{-- php artisan storage:link --}}
-    <img src="{{asset('/images/new_image.jpg')}}" alt="">
+    <img src="{{asset('/images/new_image.jpg')}}" style="width:600px;" alt="">
 
     <h1>Updated?</h1>
 

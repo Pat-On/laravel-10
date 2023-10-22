@@ -4,8 +4,8 @@
     <div class="main-content">
         <div class='card'>
             <div class='card-header'>
-                All Posts
-                <a class='btn btn-success'href="{{route('posts.create')}}">Create</a>
+                All Trashed Posts
+                <a class='btn btn-success'href="">Back</a>
                 <a class='btn btn-dark' href="">Trashed</a>
             </div>
             <div class="card-body">

@@ -55,8 +55,22 @@ class PostController extends Controller
             'description' => ['required']
         ]);
 
-        dd('success');
 
+        // in theory it is ok
+        $fileName = time().'_'.$request->image->getClientOriginalName();
+        // returning as filepath
+        $filePath = $request->image->storeAs('uploads', $fileName);
+
+        $post = new Post();
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->category_id = $request->category_id;
+
+        $post->image = $filePath;
+
+        $post->save();
+
+        return redirect()->route('posts.store');
     }
 
     /**

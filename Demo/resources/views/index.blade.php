@@ -22,20 +22,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td><img src="https://picsum.photos/200" alt="" width="80"></td>
-                            <td>Lorem ipsum dolor, sit amet consectetur adip</td>
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tempore dolor neque est
-                                molestiae.</td>
-                            <td>News</td>
-                            <td>02-05-2023</td>
-                            <td>
-                                <a class="btn-sm btn-success" href="">show</a>
-                                <a class="btn-sm btn-primary" href="">Edit</a>
-                                <a class="btn-sm btn-danger" href="">Delete</a>
-                            </td>
-                        </tr>
+                        @foreach ($posts as $post)
+                            <tr>
+                                <th scope="row">{{$post->id}}</th>
+                                {{-- php artisan storage:link --}}
+                                {{-- TODO: fix this image -I forgot how to map it ^^ some settings --}}
+                                <td><img src="{{asset('public/storage/uploads'.$post->image)}}" alt="" width="80"></td>
+                                <td>Lorem ipsum dolor, sit amet consectetur adip</td>
+                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tempore dolor neque est
+                                    molestiae.</td>
+                                <td>News</td>
+                                <td>02-05-2023</td>
+                                <td>
+                                    <a class="btn-sm btn-success" href="">show</a>
+                                    <a class="btn-sm btn-primary" href="">Edit</a>
+                                    <a class="btn-sm btn-danger" href="">Delete</a>
+                                </td>
+                            </tr>
+                        @endforeach
+
+
                     </tbody>
                 </table>
             </div>

@@ -28,11 +28,14 @@
                                 {{-- php artisan storage:link --}}
                                 {{-- TODO: fix this image -I forgot how to map it ^^ some settings --}}
                                 <td><img src="{{asset('public/storage/uploads'.$post->image)}}" alt="" width="80"></td>
-                                <td>Lorem ipsum dolor, sit amet consectetur adip</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse tempore dolor neque est
-                                    molestiae.</td>
-                                <td>News</td>
-                                <td>02-05-2023</td>
+                                <td>{{$post->title}}</td>
+                                <td>{{$post->description}}</td>
+                                <td>{{$post->category_id}}</td>
+                                {{-- <td>{{$post->created_at ? date('d-m-Y', $post->created_at) : $post->created_at}}</td> --}}
+                                {{-- <td>{{$post->created_at }}</td> --}}
+                                <td>{{date('d-m-Y',strtotime($post->created_at)) }}</td>
+
+
                                 <td>
                                     <a class="btn-sm btn-success" href="">show</a>
                                     <a class="btn-sm btn-primary" href="">Edit</a>

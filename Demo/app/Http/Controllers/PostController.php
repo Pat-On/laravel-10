@@ -59,7 +59,7 @@ class PostController extends Controller
 
         // in theory it is ok
         $fileName = time().'_'.$request->image->getClientOriginalName();
-        // returning as filepath
+        // returning as filepathAll
         $filePath = $request->image->storeAs('uploads', $fileName);
 
         $post = new Post();
@@ -163,7 +163,8 @@ class PostController extends Controller
 
     public function trashed()
     {
-
+        $posts = Post::onlyTrashed()->get();
+        return view('trashed', compact('posts'));
     }
 
     public function restore($id)

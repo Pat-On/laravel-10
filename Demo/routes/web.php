@@ -91,4 +91,7 @@ Route::post('/login', [LoginController::class, 'handleLogin'])->name('login.subm
 
 // Section 16
 
+// new feature :>
+Route::get('/posts/trash', [PostController::class, 'trashed'])->name('posts.trashed');
+
 Route::resource('posts', PostController::class);

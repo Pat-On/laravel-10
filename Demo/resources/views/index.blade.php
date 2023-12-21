@@ -6,7 +6,7 @@
             <div class='card-header'>
                 All Posts
                 <a class='btn btn-success'href="{{route('posts.create')}}">Create</a>
-                <a class='btn btn-dark' href="">Trashed</a>
+                <a class='btn btn-dark' href="{{route('posts.trashed')}}">Trashed</a>
             </div>
             <div class="card-body">
                 <table class="table table-striped">

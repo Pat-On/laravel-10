@@ -30,7 +30,7 @@
                                 <td><img src="{{asset('public/storage/'.$post->image)}}" alt="" width="80"></td>
                                 <td>{{$post->title}}</td>
                                 <td>{{$post->description}}</td>
-                                <td>{{$post->category_id}}</td>
+                                <td>{{$post->category->name}}</td>
                                 {{-- <td>{{$post->created_at ? date('d-m-Y', $post->created_at) : $post->created_at}}</td> --}}
                                 {{-- <td>{{$post->created_at }}</td> --}}
                                 <td>{{date('d-m-Y',strtotime($post->created_at)) }}</td>

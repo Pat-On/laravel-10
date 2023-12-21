@@ -42,7 +42,7 @@
                                     <a class="btn-sm btn-primary" href="{{route('posts.restore', $post->id)}}">Restore</a>
 
                                     {{-- <a class="btn-sm btn-danger" href="">Delete</a> --}}
-                                    <form action="{{route('posts.destroy', $post->id)}}" method="POST">
+                                    <form action="{{route('posts.force_delete', $post->id)}}" method="POST">
                                         @csrf
                                         @method("DELETE")
                                         <button class="btn-sm btn-danger" >Delete</button>

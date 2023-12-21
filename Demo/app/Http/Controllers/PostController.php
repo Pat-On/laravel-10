@@ -178,6 +178,10 @@ class PostController extends Controller
 
     public function forceDelete($id)
     {
+        $post = Post::onlyTrashed()->findOrFail($id);
 
+        $post->forceDelete();
+
+        return redirect()->back();
     }
 }

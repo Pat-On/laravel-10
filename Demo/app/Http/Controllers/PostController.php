@@ -153,7 +153,12 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+        $post = Post::findOrFail($id);
+        $post->delete();
 
+        // should be added here logic to remove the image
+
+        return redirect()->route('posts.index');
     }
 
     public function trashed()

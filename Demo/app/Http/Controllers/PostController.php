@@ -169,6 +169,10 @@ class PostController extends Controller
 
     public function restore($id)
     {
+        $post = Post::onlyTrashed()->findOrFail($id);
+        $post->restore();
+
+        return redirect()->back();
 
     }
 

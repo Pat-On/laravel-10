@@ -37,8 +37,10 @@
 
 
                                 <td>
-                                    <a class="btn-sm btn-success" href="{{route('posts.show', $post->id)}}">show</a>
-                                    <a class="btn-sm btn-primary" href="{{route('posts.edit', $post->id)}}">Edit</a>
+                                    {{-- <a class="btn-sm btn-success" href="{{route('posts.show', $post->id)}}">show</a> --}}
+                                    {{-- <a class="btn-sm btn-primary" href="{{route('posts.edit', $post->id)}}">Edit</a> --}}
+                                    <a class="btn-sm btn-primary" href="{{route('posts.restore', $post->id)}}">Restore</a>
+
                                     {{-- <a class="btn-sm btn-danger" href="">Delete</a> --}}
                                     <form action="{{route('posts.destroy', $post->id)}}" method="POST">
                                         @csrf

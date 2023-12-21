@@ -48,10 +48,13 @@
                                 </td>
                             </tr>
                         @endforeach
-
+                        
 
                     </tbody>
+                    {{-- Paggination --}}
                 </table>
+                {{$posts->links()}}
+
             </div>
 
         </div>

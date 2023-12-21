@@ -67,7 +67,7 @@ class PostController extends Controller
         $post->description = $request->description;
         $post->category_id = $request->category_id;
 
-        $post->image = $filePath;
+        $post->image = 'storage/' . $filePath;
 
         $post->save();
 
@@ -98,7 +98,9 @@ class PostController extends Controller
         return view('edit', compact('post', 'categories'));
     }
 
+    
     /**
+     * 
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -107,7 +109,39 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // return $request->all();
+        $request->validate([
+            'title' => ['required', 'max: 255'],
+            'category_id' => ['required', 'integer'],
+            'description' => ['required']
+        ]);
 
+        $post = Post::findOrFail($id);
+
+        if($request->hasFile('image')){
+            $request->validate([
+                'image' => ['required', 'max:2028', 'image'],
+            ]);
+            
+            // in theory it is ok
+            $fileName = time().'_'.$request->image->getClientOriginalName();
+            // returning as filepath
+            $filePath = $request->image->storeAs('uploads', $fileName);
+
+            // deleting our previous image
+            File::delete(public_path($post->image));
+
+            $post->image = $filePath;
+
+        }
+
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->category_id = $request->category_id;
+
+        $post->save();
+
+        return redirect()->route('posts.store');
     }
 
     /**

@@ -27,7 +27,7 @@
                                 <th scope="row">{{$post->id}}</th>
                                 {{-- php artisan storage:link --}}
                                 {{-- TODO: fix this image -I forgot how to map it ^^ some settings --}}
-                                <td><img src="{{asset('public/storage/uploads'.$post->image)}}" alt="" width="80"></td>
+                                <td><img src="{{asset('public/storage/'.$post->image)}}" alt="" width="80"></td>
                                 <td>{{$post->title}}</td>
                                 <td>{{$post->description}}</td>
                                 <td>{{$post->category_id}}</td>

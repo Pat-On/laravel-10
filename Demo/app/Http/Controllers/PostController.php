@@ -180,6 +180,8 @@ class PostController extends Controller
     {
         $post = Post::onlyTrashed()->findOrFail($id);
 
+        File::delete(public_path($post->image));
+
         $post->forceDelete();
 
         return redirect()->back();

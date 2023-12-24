@@ -53,7 +53,7 @@ class OrderShipped extends Mailable
     public function attachments(): array
     {
         return [
-            Attachment::fromPath('/storage/uploads/file_test.jpg')
+            // Attachment::fromPath('/storage/uploads/file_test.jpg')
         ];
     }
 }

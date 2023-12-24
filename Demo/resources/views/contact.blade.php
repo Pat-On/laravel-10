@@ -2,6 +2,11 @@
 
 @section('content')
     <div>
+
+        <h1>Sharing data across all blades files:</h1>
+        <h1> {{$site_name}}</h1>
+
+
         <h1>Contact</h1>
 
         {{-- rendering components --}}
@@ -54,4 +59,8 @@
             
         @endforeach
     </div>
+
+
+   
+
 @endsection

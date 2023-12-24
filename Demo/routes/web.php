@@ -142,3 +142,10 @@ Route::group(['middleware' => 'authCheck2'], function(){
 
 // Middleware in the controller
 Route::resource('posts2', PostControllerWithMiddleware::class);
+
+
+// Components 
+
+Route::get('contact', function(){
+    return view('contact');
+});

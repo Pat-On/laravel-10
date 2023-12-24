@@ -50,7 +50,6 @@ class Kernel extends HttpKernel
         // group middleware - check web.php route
         'authCheck' => [
             \App\Http\Middleware\AuthCheck::class,
-
         ]
     ];
 
@@ -73,5 +72,7 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        // TEST - specific routes or groups
+        'authCheck2' =>  \App\Http\Middleware\AuthCheck::class,
     ];
 }

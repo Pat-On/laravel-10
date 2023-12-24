@@ -122,3 +122,19 @@ Route::group(['middleware' => 'authCheck'], function(){
     });
 });
 
+Route::get('/profile2', function(){
+    return view('profile');
+})->middleware('authCheck2');
+
+// in this context it works very similar to groups
+// the main difference in group middleware you can pass many different middlewares
+// here you can pass only single middleware
+Route::group(['middleware' => 'authCheck2'], function(){
+    Route::get('/dashboard3', function(){
+        return view('dashboard');
+    });
+    
+    Route::get('/profile3', function(){
+        return view('profile');
+    });
+});

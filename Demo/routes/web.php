@@ -104,3 +104,21 @@ Route::resource('posts', PostController::class);
 Route::get('/unavailable', function(){
     return view('unavailable');
 })->name('unavailable');
+
+
+// Route Groups
+// Route::group([], callback)
+
+
+// http://localhost:8000/profil?auth=1
+
+Route::group(['middleware' => 'authCheck'], function(){
+    Route::get('/dashboard', function(){
+        return view('dashboard');
+    });
+    
+    Route::get('/profile', function(){
+        return view('profile');
+    });
+});
+

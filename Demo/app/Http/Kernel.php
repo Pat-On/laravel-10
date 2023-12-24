@@ -47,6 +47,11 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+        // group middleware - check web.php route
+        'authCheck' => [
+            \App\Http\Middleware\AuthCheck::class,
+
+        ]
     ];
 
     /**

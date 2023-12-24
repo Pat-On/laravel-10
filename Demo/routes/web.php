@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostControllerWithMiddleware;
 
 
 
@@ -138,3 +139,6 @@ Route::group(['middleware' => 'authCheck2'], function(){
         return view('profile');
     });
 });
+
+// Middleware in the controller
+Route::resource('posts2', PostControllerWithMiddleware::class);

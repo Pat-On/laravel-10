@@ -1,27 +1,32 @@
-<div>
-    <h1>Contact</h1>
+@extends('layouts.master')
 
-    {{-- rendering components --}}
-    <x-button />
+@section('content')
+    <div>
+        <h1>Contact</h1>
 
-    <br/>
+        {{-- rendering components --}}
+        <x-button />
 
-    {{-- from the folder  this is rendered from the call in the class--}}
-    
-    {{-- 
+        <br />
+
+        {{-- from the folder  this is rendered from the call in the class --}}
+
+        {{-- 
     FROM: App/View/Components
     public function render(): View|Closure|string
     {
         return view('components.forms.button');
     }
     --}}
-    
-    <x-forms.button />
 
+        <x-forms.button />
+        {{-- Different naming convention  --}}
+        <x-input-field />
+    </div>
 
-    {{-- Different naming convention  --}}
-
-    <x-input-field />
-
-
-</div>
+    <div class="row">
+        @foreach ($posts as $post)
+            <x-post.index :post="$post"/>
+        @endforeach
+    </div>
+@endsection

@@ -9,6 +9,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostControllerWithMiddleware;
+use App\Models\Post;
 
 
 
@@ -147,5 +148,7 @@ Route::resource('posts2', PostControllerWithMiddleware::class);
 // Components 
 
 Route::get('contact', function(){
-    return view('contact');
+    $posts = Post::all();
+
+    return view('contact', compact('posts'));
 });

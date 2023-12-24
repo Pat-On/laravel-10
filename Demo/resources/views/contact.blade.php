@@ -29,4 +29,29 @@
             <x-post.index :post="$post"/>
         @endforeach
     </div>
+
+
+    <br />
+    <h1>Components Slots </h1>
+    <x-button > 
+        Test
+    </x-button > 
+
+
+    <br />
+    <h1>Naming Slots </h1>
+
+    <div class="row">
+        @foreach ($posts as $post)
+            <x-post.index2 >
+                <x-slot name='title'>
+                    {{$post->title}}
+                </x-slot>
+                <x-slot name='description'>
+                    {{$post->description}}
+                </x-slot>
+            </x-post.index2 >
+            
+        @endforeach
+    </div>
 @endsection

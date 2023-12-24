@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PostController;
+use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\HomeController;
@@ -158,10 +159,12 @@ Route::get('contact', function(){
 // Sending email
 Route::get('send-email', function(){
     // Laravel mail Facade
-    Mail::raw('Hello World - test email', function($message){
-        // another callback :>
-        $message->to('test@gmail.com')->subject('noreply');
-    });
+    // Mail::raw('Hello World - test email', function($message){
+    //     // another callback :>
+    //     $message->to('test@gmail.com')->subject('noreply');
+    // });
+
+    Mail::send(new OrderShipped);
 
     dd('success');
 });

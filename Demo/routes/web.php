@@ -3,6 +3,7 @@
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
@@ -151,4 +152,16 @@ Route::get('contact', function(){
     $posts = Post::all();
 
     return view('contact', compact('posts'));
+});
+
+
+// Sending email
+Route::get('send-email', function(){
+    // Laravel mail Facade
+    Mail::raw('Hello World - test email', function($message){
+        // another callback :>
+        $message->to('test@gmail.com')->subject('noreply');
+    });
+
+    dd('success');
 });

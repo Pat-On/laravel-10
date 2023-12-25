@@ -27,7 +27,14 @@ class PostController extends Controller
        
         // $posts = Post::all();
 
-        $posts = Post::paginate(2);
+
+        // $posts = Post::paginate(2);
+
+        // Facade
+        $posts = Cache::remember('posts',60, function(){
+            // we used with, to cache categories too
+            return Post::with('category')->paginate(2);
+        });
 
         return view('index', compact('posts'));
     }

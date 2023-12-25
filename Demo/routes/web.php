@@ -213,3 +213,11 @@ Route::get('destroy-session', function(Request $request) {
 
     return redirect('get-session');
 });
+
+Route::get('flash-session', function(Request $request){
+    // it will store data for short duration and will be removed after hitting new request - for example going to different page 
+    // even within the same application
+    $request->session()->flash('status', 'true');
+
+    return redirect('get-session');
+});

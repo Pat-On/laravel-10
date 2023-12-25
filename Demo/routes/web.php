@@ -12,6 +12,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostControllerWithMiddleware;
 use App\Models\Post;
+use Illuminate\Http\Request;
 
 
 
@@ -167,4 +168,22 @@ Route::get('send-email', function(){
     Mail::send(new OrderShipped);
 
     dd('success');
+});
+
+
+// Sessions 
+Route::get('get-session', function(Request $request){
+    
+    
+    // managing sessions
+    // 1 request
+    // $data = $request->session()->all();
+    
+    // 2 global function
+    // $data = session()->all();
+
+    // Single session
+    $data = $request->session()->get('_token'); // session token
+
+    dd($data);
 });

@@ -177,13 +177,24 @@ Route::get('get-session', function(Request $request){
     
     // managing sessions
     // 1 request
-    // $data = $request->session()->all();
+    $data = $request->session()->all();
     
     // 2 global function
     // $data = session()->all();
 
     // Single session
-    $data = $request->session()->get('_token'); // session token
+    // $data = $request->session()->get('_token'); // session token
 
     dd($data);
+});
+
+Route::get('save-session', function(Request $request){
+    // $request->session()->put('user_id', '1234_fake_id');
+
+    $request->session()->put(['user_status' => 'logged_in']);
+
+    // Global functin
+    session(['different_example' => 'this is working']);
+
+    return redirect('get-session');
 });

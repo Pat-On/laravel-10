@@ -193,8 +193,23 @@ Route::get('save-session', function(Request $request){
 
     $request->session()->put(['user_status' => 'logged_in']);
 
-    // Global functin
+    // Global function
     session(['different_example' => 'this is working']);
+
+    return redirect('get-session');
+});
+
+Route::get('destroy-session', function(Request $request) {
+    // $request->session()->forget('user_status');
+
+    // you can pass array to delete more
+    $request->session()->forget(['user_id', 'user_status']);
+
+    // this works too:
+    // session()->forget('user_id');
+
+    // deleting everything from the session
+    session()->flush();
 
     return redirect('get-session');
 });

@@ -31,10 +31,16 @@ class PostController extends Controller
         // $posts = Post::paginate(2);
 
         // Facade
-        $posts = Cache::remember('posts',60, function(){
+        $posts = Cache::remember('posts', 60, function(){
             // we used with, to cache categories too
             return Post::with('category')->paginate(2);
         });
+
+        // Permanent storing cache
+        // $posts = Cache::rememberForever('posts', function(){
+        //     // we used with, to cache categories too
+        //     return Post::with('category')->paginate(2);
+        // });
 
         return view('index', compact('posts'));
     }

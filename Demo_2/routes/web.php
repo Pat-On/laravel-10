@@ -39,3 +39,13 @@ Route::get('/posts/{id}/restore', [PostController::class, 'restore'])->name('pos
 Route::delete('/posts/{id}/force-delete', [PostController::class, 'forceDelete'])->name('posts.force_delete');
 
 Route::resource('posts', PostController::class);
+
+
+Route::get('user-data', function(){
+    // you can access in two ways
+    // Facade
+    // return Auth::user(); // it will never show the password
+
+    // global function
+    return auth()->user();
+});

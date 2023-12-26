@@ -29,19 +29,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+// Route::group(['middleware' => 'auth'], function (){
+Route::middleware('auth')->group(function () {
+    Route::get('/posts/trash', [PostController::class, 'trashed'])->name('posts.trashed');
+
+    Route::get('/posts/{id}/restore', [PostController::class, 'restore'])->name('posts.restore');
+
+    Route::delete('/posts/{id}/force-delete', [PostController::class, 'forceDelete'])->name('posts.force_delete');
+
+    Route::resource('posts', PostController::class);
+});
 
 
-Route::get('/posts/trash', [PostController::class, 'trashed'])->name('posts.trashed');
-
-Route::get('/posts/{id}/restore', [PostController::class, 'restore'])->name('posts.restore');
-
-Route::delete('/posts/{id}/force-delete', [PostController::class, 'forceDelete'])->name('posts.force_delete');
-
-Route::resource('posts', PostController::class);
-
-
-Route::get('user-data', function(){
+Route::get('user-data', function () {
     // you can access in two ways
     // Facade
     // return Auth::user(); // it will never show the password

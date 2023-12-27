@@ -52,6 +52,8 @@ class PostController extends Controller
      */
     public function create()
     {
+        $this->authorize('create_post');
+
         $categories = Category::all();
         return view('create', compact('categories'));
     }
@@ -64,6 +66,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create_post');
+
+
         $request->validate([
             'image' => ['required', 'max:2028', 'image'],
             'title' => ['required', 'max: 255'],
@@ -109,6 +114,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        $this->authorize('edit_post');
+
         $post = Post::findOrFail($id);
         $categories = Category::all();
         return view('edit', compact('post', 'categories'));
@@ -125,6 +132,9 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $this->authorize('update_post');
+
         // return $request->all();
         $request->validate([
             'title' => ['required', 'max: 255'],
@@ -168,6 +178,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+        $this->authorize('delete_post');
+
+
         $post = Post::findOrFail($id);
         $post->delete();
 

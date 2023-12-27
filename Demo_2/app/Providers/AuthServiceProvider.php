@@ -4,6 +4,9 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Auth;
+
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -21,6 +24,29 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // 1. create_post
+
+        // 2. edit_post
+
+        // 3. delete_post
+
+        // .. declaring gate
+        Gate::define('create_post', function(){
+            // here is going validation logic
+
+            return Auth::user()->is_admin;
+        });
+
+        Gate::define('edit_post', function(){
+            // here is going validation logic
+
+            return Auth::user()->is_admin;
+        });
+
+        Gate::define('delete_post', function(){
+            // here is going validation logic
+
+            return Auth::user()->is_admin;
+        });
     }
 }

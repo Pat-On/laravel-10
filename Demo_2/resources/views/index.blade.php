@@ -5,8 +5,12 @@
         <div class='card'>
             <div class='card-header'>
                 All Posts
-                <a class='btn btn-success'href="{{route('posts.create')}}">Create</a>
-                <a class='btn btn-dark' href="{{route('posts.trashed')}}">Trashed</a>
+
+                {{-- you need to pass guard name --}}
+                @can('create_post')
+                    <a class='btn btn-success'href="{{route('posts.create')}}">Create</a>
+                    <a class='btn btn-dark' href="{{route('posts.trashed')}}">Trashed</a>
+                @endcan
             </div>
             <div class="card-body">
                 <table class="table table-striped">

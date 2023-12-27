@@ -7,7 +7,9 @@
                 All Posts
 
                 {{-- you need to pass guard name --}}
-                @can('create_post')
+                {{-- @can('create_post') --}}
+                @can('create', \App\Models\Post::class)
+
                     <a class='btn btn-success'href="{{route('posts.create')}}">Create</a>
                     <a class='btn btn-dark' href="{{route('posts.trashed')}}">Trashed</a>
                 @endcan

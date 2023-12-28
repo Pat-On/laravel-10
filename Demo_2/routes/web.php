@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Mail\PostPublished;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Jobs\SendMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,4 +52,13 @@ Route::get('user-data', function () {
 
     // global function
     return auth()->user();
+});
+
+Route::get('send-mail', function(){
+    // Mail::send(new PostPublished());
+
+    // Dispatching Job
+    SendMail::dispatch();
+
+    dd('done');
 });

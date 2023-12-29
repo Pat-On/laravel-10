@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Observers\PostObserver;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use App\Models\Post;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,5 +29,8 @@ class AppServiceProvider extends ServiceProvider
         // PAssing variable to all blades files / view files
         
         View::share('site_name', 'My Site'); // can be any type of data for example, array, object etc
+        
+        // adding observer
+        Post::observe(PostObserver::class);
     }
 }

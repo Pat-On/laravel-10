@@ -1,0 +1,54 @@
+<?php
+
+namespace App\Observers;
+
+use App\Models\Post;
+use App\Jobs\SendMail;
+
+// php artisan make:observer PostObserver --model=Post
+
+class PostObserver
+{
+    /**
+     * Handle the Post "created" event.
+     */
+    public function created(Post $post): void
+    {
+        // You can use observer only on a model. 
+        // these methods will fire after the creating modifying etc data on model
+        SendMail::dispatch();
+
+    }
+
+    /**
+     * Handle the Post "updated" event.
+     */
+    public function updated(Post $post): void
+    {
+        //
+    }
+
+    /**
+     * Handle the Post "deleted" event.
+     */
+    public function deleted(Post $post): void
+    {
+        //
+    }
+
+    /**
+     * Handle the Post "restored" event.
+     */
+    public function restored(Post $post): void
+    {
+        //
+    }
+
+    /**
+     * Handle the Post "force deleted" event.
+     */
+    public function forceDeleted(Post $post): void
+    {
+        //
+    }
+}

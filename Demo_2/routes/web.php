@@ -72,3 +72,7 @@ Route::get('user-register', function(){
 
     dd('done');
 });
+
+Route::get('greeting', function(){
+    return view('greeting');
+});

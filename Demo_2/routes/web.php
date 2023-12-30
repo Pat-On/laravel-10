@@ -3,6 +3,7 @@
 use App\Events\UserRegister;
 use App\Http\Controllers\ProfileController;
 use App\Mail\PostPublished;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Jobs\SendMail;
@@ -73,6 +74,11 @@ Route::get('user-register', function(){
     dd('done');
 });
 
-Route::get('greeting', function(){
+
+// en, pl - simple dynamic example
+Route::get('greeting/{locale}', function($locale){
+
+    App::setLocale($locale);
+
     return view('greeting');
 });
